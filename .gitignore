@@ -35,6 +35,6 @@ hs_err_pid*
 /data
 /target/*
 */target
-.idea/
+.idea/*
 /.idea/
 
