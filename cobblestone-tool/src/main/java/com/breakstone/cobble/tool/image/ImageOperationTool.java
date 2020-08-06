@@ -38,7 +38,11 @@ public class ImageOperationTool {
 //        appendVertically(Lists.newArrayList(image_path + "1.png", image_path + "2.png"), image_path + "vertically.png");
 //        composite();
 
-        sepiaTone(imagePath("1.png"), imagePath("sepiaTone.png"));
+//        sepiaTone(imagePath("1.png"), imagePath("sepiaTone.png"));
+
+//        plasma(imagePath("2.png"),imagePath("plasma.png"));
+
+        checkerboard(imagePath("2.png"),imagePath("checkerboard.png"));
     }
 
     /**
@@ -59,6 +63,7 @@ public class ImageOperationTool {
      * 6.图片动画-GIF
      * 7.图片透明度
      * 8.图片加水印
+     * 9.图片加滤镜
      */
 
     /**
@@ -133,7 +138,10 @@ public class ImageOperationTool {
      */
     public static void addImgText(String srcPath) throws Exception {
         IMOperation op = new IMOperation();
-        op.font("宋体").gravity("southeast").pointsize(18).fill("#BCBFC8")
+        op.font("宋体")
+                .gravity("southeast")
+                .pointsize(18)
+                .fill("#BCBFC8")
                 .draw("text 5,5 juziku.com");
         op.addImage();// 占位符？？
         op.addImage();
@@ -203,7 +211,7 @@ public class ImageOperationTool {
         op.addImage(srcImagePath);
         op.compose("src_in").composite();
         op.addImage(destImagePath);
-        exeConvertCmd(op, true);
+        exeConvertCmd(op, false);
     }
 
 
@@ -214,7 +222,7 @@ public class ImageOperationTool {
      * @param destImagePath
      * @throws Exception
      */
-    public static void checkerboard(String srcImagePath, String destImagePath) throws Exception {
+    public static void checkerboard(String srcImagePath, String destImagePath)  {
         IMOperation op = new IMOperation();
         op.seed().addRawArgs("6215");
         op.size(400, 324).addRawArgs("plasma:fractal");
@@ -224,14 +232,14 @@ public class ImageOperationTool {
         op.addImage(srcImagePath);
         op.compose("src_in").composite();
         op.addImage(destImagePath);
-        exeConvertCmd(op, true);
+        exeConvertCmd(op, false);
 
         op = new IMOperation();
         op.size(400, 324).addRawArgs("pattern:checkerboard");
         op.addImage(destImagePath);
         op.composite();
         op.addImage(destImagePath);
-        exeConvertCmd(op, true);
+        exeConvertCmd(op, false);
     }
 
     /**
