@@ -5,16 +5,21 @@ import org.im4java.core.*;
 import org.im4java.utils.BatchConverter;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 /**
  * @Author: siqigang
  * @Date: 2020/8/6 下午4:27
  **/
 @Slf4j
 public class CompositeUtil {
+
+
     private static String imagePath(String name) {
         return "/Users/Wimux/T_image/" + name;
     }
 
+    private ThreadLocal<Integer> threadIds = null;
 
     @Test
     public void composite1() {
@@ -120,11 +125,11 @@ public class CompositeUtil {
         op3.pointsize(28);
         //文字颜色
         op3.fill("#ACBFC8");
-        op3.draw("text 386,65 '" + title+"'");
+        op3.draw("text 386,65 '" + title + "'");
 
         // 文字大小
         op3.pointsize(20);
-        op3.draw("text 386,100 '" + subTitle+"'");
+        op3.draw("text 386,100 '" + subTitle + "'");
         // 添加背景
         op3.addImage(imagePath("t2.png"));
         op3.addImage(imagePath("t3.png"));
@@ -135,7 +140,7 @@ public class CompositeUtil {
     }
 
 
-    enum GravityEnum {
+    static enum GravityEnum {
         NorthWest,
         North,
         NorthEast,
