@@ -1,4 +1,4 @@
-package com.breakstone.cobble.test.basic;
+package com.breakstone.cobble.core.test.basic;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.junit.jupiter.api.Test;
@@ -7,7 +7,6 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.atomic.LongAdder;
 import java.util.stream.IntStream;
 
 public class LongAdderTest {
