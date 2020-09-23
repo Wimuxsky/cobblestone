@@ -1,4 +1,4 @@
-package com.breakstone.cobble.core.test.basic;
+package cobble.core.test.basic;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
 import org.junit.jupiter.api.Test;

@@ -1,4 +1,4 @@
-package com.breakstone.cobble.core.test.combine;
+package cobble.core.test.combine;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
